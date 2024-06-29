@@ -3,12 +3,13 @@ const CustomersModel = require("../models/customer/CustomersModel");
 const CreateService = require("../services/common/CreateService");
 const DetailsService = require("../services/common/DetailsService");
 const DropDownService = require("../services/common/DropDownService");
-const ListService = require("../services/common/ListService");
+// const ListService = require("../services/common/ListService");
 const UserUpdateService = require("../services/user/UserUpdateService");
 const DeleteService = require("../services/common/DeleteService");
 const mongoose = require("mongoose");
 const AssociateVerificationService = require("../services/common/AssociateVerificationService");
 const ProductModel = require("../models/product/ProductModel");
+const ListTwoService = require('../services/common/ListTwoService');
 
 exports.CreateCustomer = async (req, res) => {
     try {
@@ -54,7 +55,7 @@ exports.CustomerList = async (req, res) => {
     try {
         let searchRegex = { $regex: req.params.searchText, $options: "i" };
         let array = [{ customerName: searchRegex }, { email: searchRegex }, { phone: searchRegex }, { address: searchRegex }];
-        let result = await ListService(req, CustomersModel, array);
+        let result = await ListTwoService(req, CustomersModel, array);
         res.status(200).json(result);
     } catch (error) {
         console.error("Error in fetching customer list:", error);

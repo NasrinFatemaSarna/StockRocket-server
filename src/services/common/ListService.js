@@ -8,7 +8,7 @@ const ListService = async (Request, DataModel, searchArray, JoinOneStage = {}) =
         let searchText = Request.params.searchText;
         let userEmail = Request.headers.email;
 
-        let skip = perPage * (pageNumber - 1);
+        let skip = (pageNumber - 1) * perPage ;
         let data;
 
         const basePipeline = [
