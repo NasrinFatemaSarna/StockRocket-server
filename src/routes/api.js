@@ -23,7 +23,7 @@ router.get("/email-verify/:email", UserController.EmailVerify);
 router.get("/otp-verify/:email/:otp", UserController.OtpVerify);
 router.post("/reset-password", UserController.ResetPassword);
 router.get("/profile-details", AuthVerificationMiddleware, UserController.UserDetails);
-router.put("/update-profile", AuthVerificationMiddleware, UserController.UserUpdate);
+router.post("/update-profile", AuthVerificationMiddleware, UserController.UserUpdate);
 
 // Brand routes
 router.post("/create-brand", AuthVerificationMiddleware, BrandController.CreateBrand);
@@ -45,7 +45,7 @@ router.delete("/category-delete/:id", AuthVerificationMiddleware, CategoryContro
 router.post("/create-product", AuthVerificationMiddleware, ProductController.CreateProduct);
 router.get("/product-details/:id", AuthVerificationMiddleware, ProductController.ProductDetailsById);
 router.get("/product-dropdown", AuthVerificationMiddleware, ProductController.ProductDropDown);
-router.put("/product-update/:id", AuthVerificationMiddleware, ProductController.UpdateProduct);
+router.post("/product-update/:id", AuthVerificationMiddleware, ProductController.UpdateProduct);
 router.get("/product-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, ProductController.ProductList);
 
 // Suppliers routes
@@ -54,7 +54,7 @@ router.get("/supplier-details/:id", AuthVerificationMiddleware, SuppliersControl
 router.get("/supplier-dropdown", AuthVerificationMiddleware, SuppliersController.SupplierDropDown);
 router.get("/supplier-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, SuppliersController.SupplierList);
 router.delete("/supplier-delete/:id", AuthVerificationMiddleware, SuppliersController.DeleteSupplier); // Changed to DELETE
-router.put("/supplier-update/:id", AuthVerificationMiddleware, SuppliersController.SupplierUpdateById);
+router.post("/supplier-update/:id", AuthVerificationMiddleware, SuppliersController.SupplierUpdateById);
 
 // Customer routes
 router.post("/create-customer", AuthVerificationMiddleware, CustomerController.CreateCustomer);
@@ -62,7 +62,7 @@ router.get("/customer-details/:id", AuthVerificationMiddleware, CustomerControll
 router.get("/customer-dropdown", AuthVerificationMiddleware, CustomerController.CustomerDropDown);
 router.get("/customer-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, CustomerController.CustomerList);
 router.delete("/customer-delete/:id", AuthVerificationMiddleware, CustomerController.DeleteCustomer); // Changed to DELETE
-router.put("/customer-update/:id", AuthVerificationMiddleware, CustomerController.CustomerUpdateById);
+router.post("/customer-update/:id", AuthVerificationMiddleware, CustomerController.CustomerUpdateById);
 
 // Purchase routes
 router.post("/create-purchase", AuthVerificationMiddleware, PurchaseController.CreatePurchase);
