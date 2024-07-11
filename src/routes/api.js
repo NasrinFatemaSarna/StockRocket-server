@@ -31,7 +31,7 @@ router.get("/brand-details/:id", AuthVerificationMiddleware, BrandController.Bra
 router.post("/brand-update/:id", AuthVerificationMiddleware, BrandController.BrandUpdateById);
 router.get("/brand-dropdown", AuthVerificationMiddleware, BrandController.BrandDropDown);
 router.get("/brand-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, BrandController.BrandList);
-router.delete("/brand-delete/:id", AuthVerificationMiddleware, BrandController.DeleteBrand); // Changed to DELETE
+router.get("/brand-delete/:id", AuthVerificationMiddleware, BrandController.DeleteBrand); // Changed to DELETE
 
 // Category routes
 router.post("/create-category", AuthVerificationMiddleware, CategoryController.CreateCategory); // Changed to POST
@@ -39,7 +39,7 @@ router.get("/category-details/:id", AuthVerificationMiddleware, CategoryControll
 router.post("/category-update/:id", AuthVerificationMiddleware, CategoryController.CategoryUpdateById);
 router.get("/category-dropdown", AuthVerificationMiddleware, CategoryController.CategoryDropDown);
 router.get("/category-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, CategoryController.CategoryList);
-router.delete("/category-delete/:id", AuthVerificationMiddleware, CategoryController.DeleteCategory); // Changed to DELETE
+router.get("/category-delete/:id", AuthVerificationMiddleware, CategoryController.DeleteCategory); // Changed to DELETE
 
 // Product routes
 router.post("/create-product", AuthVerificationMiddleware, ProductController.CreateProduct);
@@ -53,7 +53,7 @@ router.post("/create-supplier", AuthVerificationMiddleware, SuppliersController.
 router.get("/supplier-details/:id", AuthVerificationMiddleware, SuppliersController.SupplierDetailsById);
 router.get("/supplier-dropdown", AuthVerificationMiddleware, SuppliersController.SupplierDropDown);
 router.get("/supplier-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, SuppliersController.SupplierList);
-router.delete("/supplier-delete/:id", AuthVerificationMiddleware, SuppliersController.DeleteSupplier); // Changed to DELETE
+router.get("/supplier-delete/:id", AuthVerificationMiddleware, SuppliersController.DeleteSupplier); // Changed to DELETE
 router.post("/supplier-update/:id", AuthVerificationMiddleware, SuppliersController.SupplierUpdateById);
 
 // Customer routes
@@ -61,23 +61,23 @@ router.post("/create-customer", AuthVerificationMiddleware, CustomerController.C
 router.get("/customer-details/:id", AuthVerificationMiddleware, CustomerController.CustomerDetailsById);
 router.get("/customer-dropdown", AuthVerificationMiddleware, CustomerController.CustomerDropDown);
 router.get("/customer-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, CustomerController.CustomerList);
-router.delete("/customer-delete/:id", AuthVerificationMiddleware, CustomerController.DeleteCustomer); // Changed to DELETE
+router.get("/customer-delete/:id", AuthVerificationMiddleware, CustomerController.DeleteCustomer); // Changed to DELETE
 router.post("/customer-update/:id", AuthVerificationMiddleware, CustomerController.CustomerUpdateById);
 
 // Purchase routes
 router.post("/create-purchase", AuthVerificationMiddleware, PurchaseController.CreatePurchase);
 router.get("/purchase-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, PurchaseController.PurchaseList);
-router.delete("/purchase-delete/:id", AuthVerificationMiddleware, PurchaseController.PurchaseDelete); // Changed to DELETE
+router.get("/purchase-delete/:id", AuthVerificationMiddleware, PurchaseController.PurchaseDelete); // Changed to DELETE
 
 // Sales routes
 router.post("/create-sales", AuthVerificationMiddleware, SalesController.CreateSales);
 router.get("/sales-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, SalesController.SalesList);
-router.delete("/sales-delete/:id", AuthVerificationMiddleware, SalesController.SalesDelete); // Changed to DELETE
+router.get("/sales-delete/:id", AuthVerificationMiddleware, SalesController.SalesDelete); // Changed to DELETE
 
 // Return routes
 router.post("/create-return", AuthVerificationMiddleware, ReturnController.CreateReturn);
 router.get("/return-list/:pageNumber/:perPage/:searchText", AuthVerificationMiddleware, ReturnController.ReturnList);
-router.delete("/return-delete/:id", AuthVerificationMiddleware, ReturnController.ReturnDelete); // Changed to DELETE
+router.get("/return-delete/:id", AuthVerificationMiddleware, ReturnController.ReturnDelete); // Changed to DELETE
 
 // Expense routes
 router.post("/create-expense", AuthVerificationMiddleware, ExpenseController.CreateExpense);
