@@ -62,7 +62,7 @@ exports.CustomerList = async (req, res) => {
     }
 };
 
-exports.DeleteCustomer = async (req, res) => {
+ exports.DeleteCustomer = async (req, res) => {
     try {
         const objectId = mongoose.Types.ObjectId;
         const deleteId = req.params.id;
