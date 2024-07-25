@@ -52,9 +52,9 @@ exports.CustomerDropDown = async (req, res) => {
 
 exports.CustomerList = async (req, res) => {
     try {
-        let searchRegex = {$regex : req.params.searchText, $options : "i"}
+        let searchRegex = {$regex : req.params.searchText, $options :"i"}
         let array = [{customerName:searchRegex}, {email:searchRegex}, {phone:searchRegex},{address:searchRegex}];
-        let result = await ListService(req.CustomersModel,array)
+        let result = await ListService(req,CustomersModel,array)
         res.status(200).json(result);
     } catch (error) {
         console.error("Error in fetching customer list:", error);
