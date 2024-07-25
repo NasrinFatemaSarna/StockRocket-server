@@ -53,7 +53,7 @@
 
 const mongoose = require("mongoose");
 
-const ListService = async (Request, DataModel, Array = []) => {
+const ListService = async (Request, DataModel, Array = {}) => {
   try {
     let pageNumber = Number(Request.params.pageNumber);
     let perPage = Number(Request.params.perPage);
